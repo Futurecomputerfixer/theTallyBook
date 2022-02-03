@@ -1,5 +1,4 @@
 flask
 gunicorn
-flask_session
 sqlite3
 Flask-Session
