@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div id='header'>
+        <a href="/" class="logo nav-bar"><strong><i class="bi bi-card-checklist"></i> THE TALLYBOOK</strong><i style='font-size:20px'> your expenses tracker</i></a>
+    </div>
+    <p class="alert alert-info" style="text-align: center;margin:0;"><i>Please set up your username and password</i></p>
+    <main class="container-fluid" style="overflow-x: auto;text-align: center;background-color:darkslateblue;margin:0">
+        <form action="/signup" method="post">
+            {% if apology %} 
+            <div class="apology alert alert-danger" role="alert">{{ apology }}</div>
+            {% endif %}
+            <div class="form-group">
+                <input type="text" autocomplete="off" placeholder="username" name="username">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="password" autocmplete="off" placeholder="password" name="password">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="password" autocmplete="off" placeholder="confirm password" name="confirmation">
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+        
+    </main>
+{% endblock %}

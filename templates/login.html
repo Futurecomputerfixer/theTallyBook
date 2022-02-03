@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <!--commenting format for html-->
+    <div id='header'>
+        <a href="/" class="logo nav-bar"><strong><i class="bi bi-card-checklist"></i> THE TALLYBOOK</strong><i style='font-size:20px'> your expenses tracker</i></a> 
+    </div>
+    
+    <main class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col"><img src="/static/pic.jpeg" width="500px" height="400px"></div>
+            <div class="col">
+                <form action="/login" method="post">
+                    <div class="form-group"><input class="form-control" autocomplete="off" name="username" placeholder="Username" type="text"></div>
+                    <br>
+                    <div class="form-group"><input class="form-control" name="password" placeholder="Password" type="password"></div>
+                    <br>
+                    <button class="btn btn-primary" type="submit">Log In</button>
+                    <p>Don't have an account?<a href="/signup">Sign up</a></p>
+                    {% if apology %}
+                    <div class="apology alert alert-danger" role="alert"> {{ apology }} </div>
+                    {% endif %}
+                </form></div>    
+            <div class="col"><img src="/static/receipt.png" width="auto" height="400px"></div>
+        </div>
+    </main>
+{% endblock %}

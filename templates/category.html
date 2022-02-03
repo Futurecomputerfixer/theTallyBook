@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <nav id='header' class="row" style="width: 1452px;">        
+        <a href="entry" class="col-1 nav-bar" style="font-size:18px;">NEW ENTRY</a>
+        <a href="summary" class="col-1 nav-bar" style="font-size:18px;">MONTHLY SUMMARY</a>
+        <a href="/" class="logo col-8 nav-bar"><strong><i class="bi bi-card-checklist"></i> THE TALLYBOOK</strong><i style='font-size:20px'> your expenses tracker</i></a> 
+        <a href="/logout" class="col-2 nav-bar" style="text-align: right; font-size:18px">LOGOUT</a>
+    </nav>
+    <p class="alert alert-warning" role="alert" style="text-align: center;">Create new category for entries</p>
+    {% if apology %}<p class="alert alert-danger" style="text-align: center;" role="alert">{{ apology }}</p>{% endif %}
+    <div class="container" style="display:flex; justify-content: center;">
+        <form action="/category" method="post">
+            <div class="form-group">
+                <input type="text" autocomplete="off" placeholder="e.g. grocery" name="category" id="category">
+                <button class="btn btn-primary" type="submit" onclick="return validateForm()">CREATE</button>
+            </div>
+            
+        </form>
+        <script>
+            function validateForm() {
+                var x = document.getElementById("category").value;
+                if (x == "") {
+                    alert("Name must be filled out");
+                    return false;
+                }
+            }
+        </script>
+
+    </div>
+{% endblock %}
