@@ -1,4 +1,4 @@
 flask
 gunicorn
 sqlite3
-Flask-Session
+Flask-Session==0.4.0
