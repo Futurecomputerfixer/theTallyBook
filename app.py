@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, session, redirect, json
-
+from flask_session.__init__ import Session
 from tempfile import mkdtemp
 from functools import wraps
 from helpers import connect
