@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, session, redirect, json
 from flask_session import Session
-from tempfile import mkdtemp
 from functools import wraps
 from helpers import connect
 from werkzeug.security import check_password_hash, generate_password_hash
